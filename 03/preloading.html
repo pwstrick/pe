@@ -1,0 +1,36 @@
+<!--
+ * @Author: strick
+ * @LastEditors: strick
+ * @Date: 2023-01-31 10:33:15
+ * @LastEditTime: 2023-01-31 13:25:35
+ * @Description: 预加载
+ * @FilePath: /web/pe/03/preloading.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>预加载</title>
+</head>
+<body>
+    <img src="../assets/img/blank.gif" data-src="../assets/img/cover.jpg" width="100%"/>
+    <img src="../assets/img/blank.gif" data-src="../assets/img/loading/1.png" width="100%"/>
+    <img src="../assets/img/loading/2.png" width="100%"/>
+    <script>
+        function loadImage(url, callback) {
+            const img = new Image();
+            img.src = url;
+            img.onload = function () {
+                //将回调函数的 this 替换为Image对象
+                callback.call(img);
+            };
+        };
+        document.querySelectorAll('img[data-src]').forEach(node => {
+            loadImage(node.dataset.src, function() {
+                node.src = this.src;
+            });
+        });
+    </script>
+</body>
+</html>

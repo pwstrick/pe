@@ -1,0 +1,36 @@
+<!--
+ * @Author: strick
+ * @LastEditors: strick
+ * @Date: 2023-01-31 10:33:15
+ * @LastEditTime: 2023-01-31 11:12:43
+ * @Description: 第 2 种懒加载
+ * @FilePath: /web/pe/03/lazy2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>第 2 种懒加载</title>
+</head>
+<body>
+    <img src="../assets/img/blank.gif" data-src="../assets/img/cover.jpg" width="100%"/>
+    <img src="../assets/img/blank.gif" data-src="../assets/img/cover.jpg" width="100%"/>
+    <img src="../assets/img/blank.gif" data-src="../assets/img/cover.jpg" width="100%"/>
+    <script>
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // 不在可视区域内就返回
+                if(!entry.isIntersecting)
+                    return;
+                const img = entry.target;
+                img.src = img.dataset.src;
+                observer.unobserve(img);    // 取消监控
+            });
+        });
+        document.querySelectorAll('img[data-src]').forEach(node => {
+            observer.observe(node);
+        });
+    </script>
+</body>
+</html>

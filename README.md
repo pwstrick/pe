@@ -13,3 +13,5 @@ $ http-server ./pe/
 ```
 
 在浏览器地址栏中，输入 http://localhost:8080/03/xxx.html 就能访问指定的示例了。
+
+推荐用 Chrome 的移动设备模拟器打开示例页面。
