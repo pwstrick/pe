@@ -9,7 +9,7 @@
 
 运行命令后，就能在本地搭建服务器。
 ```bash
-$ http-server ./shin-monitor/
+$ http-server ./pe/
 ```
 
 在浏览器地址栏中，输入 http://localhost:8080/03/xxx.html 就能访问指定的示例了。
