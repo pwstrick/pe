@@ -1,0 +1,30 @@
+<!--
+ * @Author: strick
+ * @LastEditors: strick
+ * @Date: 2023-01-31 10:33:15
+ * @LastEditTime: 2023-02-03 18:02:36
+ * @Description: requestAnimationFrame
+ * @FilePath: /web/pe/04/02/raf.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>requestAnimationFrame</title>
+    <link rel="stylesheet" href="../../assets/css/demo.css" />
+</head>
+<body>
+    <span id='container' style="position:absolute">内容</span>
+    <script>
+        let left = 0;
+        const frame = () => {
+            const container = document.getElementById('container');
+            container.style.left = `${left++}px`;
+            if(left > 100) return;
+            requestAnimationFrame(frame);
+        };
+        requestAnimationFrame(frame);
+    </script>
+</body>
+</html>
