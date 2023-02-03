@@ -2,22 +2,23 @@
  * @Author: strick
  * @LastEditors: strick
  * @Date: 2023-01-31 10:33:15
- * @LastEditTime: 2023-01-31 17:22:24
- * @Description: 失败处理
- * @FilePath: /web/pe/03/error.html
+ * @LastEditTime: 2023-02-03 11:35:57
+ * @Description: 延迟解码
+ * @FilePath: /web/pe/03/03/decode.html
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-    <title>失败处理</title>
+    <title>延迟解码</title>
 </head>
 <body>
-    <img src="../assets/img/error.jpg" />
     <script>
-        document.querySelector('img').addEventListener('error', function() {
-            this.src = '../assets/img/cover-small.jpg';
+        const img = new Image();
+        img.src = '../../assets/img/cover.jpg';
+        img.decode().then(() => {
+            document.body.appendChild(img);
         });
     </script>
 </body>
