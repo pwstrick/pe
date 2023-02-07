@@ -1,0 +1,34 @@
+<!--
+ * @Author: strick
+ * @LastEditors: strick
+ * @Date: 2023-01-31 10:33:15
+ * @LastEditTime: 2023-02-07 10:55:30
+ * @Description: 位运算
+ * @FilePath: /web/pe/05/01/bit.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>位运算</title>
+</head>
+<body>
+    <script>
+        const digit = 2;
+        console.log(digit & 1);
+        let a = 2, b = 1;
+        a = a^b;
+        b = b^a;
+        a = a^b;
+        console.log(a, b);
+        const OPTION_A = 1, OPTION_B = 2, OPTION_C = 4, OPTION_D = 8, OPTION_E = 16;
+        //用按位或运算创建一个数字来包含多个设置选项
+        const options = OPTION_A | OPTION_C | OPTION_D;
+        //接下来可以用按位与操作来判断给定的选项是否可用
+        //选项A是否在列表中
+        if(options & OPTION_A) {
+        }
+    </script>
+</body>
+</html>
