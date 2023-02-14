@@ -1,0 +1,34 @@
+<!--
+ * @Author: strick
+ * @LastEditors: strick
+ * @Date: 2023-01-31 10:33:15
+ * @LastEditTime: 2023-02-14 11:10:02
+ * @Description: Service Worker
+ * @FilePath: /web/pe/05/01/worker.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>Service Worker</title>
+</head>
+<body>
+    <script>
+        window.addEventListener('load', () => {
+            // 注册一个 sw.js，通知浏览器为该页面分配一块内存，然后就会进入安装阶段
+            navigator.serviceWorker.register('/sw.js').then((registration) => {
+                console.log('service worker 注册成功')
+            }).catch((err) => {
+                console.log('servcie worker 注册失败')
+            })
+        });
+        // setTimeout(() => {
+        //     var script = document.createElement('script');
+        //     script.src = '/assets/js/demo.js';
+        //     document.body.appendChild(script);
+        // }, 2000);
+    </script>
+    <script src="../../assets/js/demo.js"></script>
+</body>
+</html>
