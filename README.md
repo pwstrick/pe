@@ -18,4 +18,4 @@ $ http-server ./pe/
 
 为了便于记忆，特将此系列的所有重点内容浓缩成一张思维导图。
 
-<img src="https://github.com/pwstrick/pe/raw/main/assets/img/mind.png" />
+<img src="https://github.com/pwstrick/pe/raw/main/assets/img/pe.png" />
